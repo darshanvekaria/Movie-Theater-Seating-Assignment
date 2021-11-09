@@ -33,6 +33,7 @@ Sample output description:
 ### Critical assumptions and considerations
 
 - Each request wants to **get the tickets in a cluster**. For example, if the buyer wants 5 tickets, then he will only accept the tickets if they consecutive in a row. If two different rows have 3 and 2 tickets available, we assume that the buyer won't be interested in buying the tickets.
+- Requests are processed in the **order in which they come**.
 - Time complexity for selections and updation of seats must be **optimal**
 
 ### Algorithm to solve the problem:
