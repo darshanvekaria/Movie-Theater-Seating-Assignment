@@ -53,8 +53,10 @@ Sample output description:
 ## **Time Complexity:**
 
 For processing one request:
-**Best case time complexity is O(log n)
-Worst case time complexity is O(n^2)**
+\*\*
+
+- Best case time complexity is O(log n)
+- Worst case time complexity is O(n^2)\*\*
 
 ## Sample Input
 
