@@ -1,0 +1,38 @@
+R1	A1, A2, A3, A4
+
+R2	C1, C2, C3, C4, C5, C6
+
+R3	E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12
+
+R4	G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13, G14, G15, G16
+
+R5	I1, I2, I3, I4, I5, I6, I7, I8, I9, I10
+
+R6	C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20
+
+R7	Cluster of requested seats not available!
+
+R8	A8, A9, A10
+
+R9	E16, E17, E18, E19, E20
+
+R10	H17, H18, H19, H20
+
+R11	J11, J12, J13
+
+R12	A14
+
+R13	J17
+
+
+
+X X X X - - - X X X - - - X - - - . . . 
+- - - - - - . - - - - - - - - - - - - - 
+X X X X X X - - - X X X X X X X X X X X 
+- - - - - - - - - - - - - - - - - - - - 
+X X X X X X X X X X X X - - - X X X X X 
+- - - - - - - - - - - - - - - - - - - - 
+X X X X X X X X X X X X X X X X - - - - 
+- - - - - - - - - - - - - - - - X X X X 
+X X X X X X X X X X - - - . . . - - - - 
+- - - - - - - - - - X X X - - - X - - - 
