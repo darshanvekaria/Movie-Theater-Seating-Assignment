@@ -1,5 +1,7 @@
 import java.util.*;
 import javax.naming.spi.ResolveResult;
+import javax.sound.sampled.BooleanControl;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
@@ -7,6 +9,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 class MovieSeats2{
+
+
+    public static boolean checkRange(char[][] cinema, int row, int start, int end){
+        for(int i = start; i <= end; i++){
+            if(cinema[row][i] != '.') return false;
+        }
+
+        return true;
+    }
 
     // Method to remove currently selected seat.
     public static void removeFromSet(HashMap<Integer, HashSet<Character>> seatAvailable, int count, char ch){
@@ -219,12 +230,16 @@ class MovieSeats2{
                     for(char j = 'A'; j <= 'J'; j++){
                         for(int k = 0; k < 20; k++){
 
-                            if(booking + k - 1< 20 && cinema[j - 'A'][k]=='.' && cinema[j - 'A'][k + booking -1]=='.'){
+                            // cinema[j - 'A'][k]=='.' && cinema[j - 'A'][k + booking -1]=='.'
+                            if(booking + k - 1< 20 && checkRange(cinema, j - 'A', k, k + booking -1)){
                                 for(int z = k; z < booking + k; z++){
                                     cinema[j - 'A'][z] = 'X';
                                     al.add(Character.toString(j) + String.valueOf(z));
                                     if((char)(j-1) >= 'A' && (char)(j-1) >= 'J') cinema[(char)(j-1) - 'A'][z] = '-';
                                     if((char)(j+1) >= 'A' && (char)(j+1) <= 'J') cinema[(char)(j+1) - 'A'][z] = '-';
+                                }
+                                for(int z=booking + k; z < Math.min(booking+ k +3, 20); z++){
+                                    cinema[j - 'A'][z] = '-';
                                 }
                                 if(al.size()>0) break;
                             }
