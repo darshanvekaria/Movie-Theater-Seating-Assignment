@@ -52,11 +52,10 @@ Sample output description:
 
 ## **Time Complexity:**
 
-For processing one request:
-\*\*
+For finding seats for one request:
 
-- Best case time complexity is O(log n)
-- Worst case time complexity is O(n^2)\*\*
+- Best case time complexity is **O(log n)**
+- Worst case time complexity is **O(n^2)**
 
 ## Sample Input
 
@@ -88,7 +87,7 @@ R005 I1, I2, I3, I4, I5, I6, I7, I8, I9, I10
 
 R006 C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20
 
-R007 ClusteR00 0f R00equested seats n0t available!
+R007 Cluster 0f Requested seats not available!
 
 R008 A8, A9, A10
 
@@ -101,18 +100,3 @@ R0011 J11, J12, J13
 R0012 A14
 
 R0013 J17
-
-X X X X 0 0 0 X X X 0 0 0 X 0 0 0 E E E
-0 0 0 0 0 0 E 0 0 0 0 0 0 0 0 0 0 0 0 0
-X X X X X X 0 0 0 X X X X X X X X X X X
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-X X X X X X X X X X X X 0 0 0 X X X X X
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-X X X X X X X X X X X X X X X X 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 X X X X
-X X X X X X X X X X 0 0 0 E E E 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 X X X 0 0 0 X 0 0 0
-
-X = Seat assigned
-0= Padding
-E =Empty seat

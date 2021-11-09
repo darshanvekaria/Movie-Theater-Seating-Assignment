@@ -57,7 +57,6 @@ class MovieSeats2{
                 System.out.println("File not found!");
             }
 
-            
 
             // Seat count map will represent the total number of seats filled up in each row
             HashMap<Character, Integer> seatCount = new HashMap<>();
@@ -216,12 +215,16 @@ class MovieSeats2{
 
                     // If all the seats are showed as filled up, it might be the case that there is some empty seat in the middle of the row. Check for that and fill if match is found - O(n^2)  
                     ArrayList<String> al = reservations.get(id);
+                    
                     for(char j = 'A'; j <= 'J'; j++){
                         for(int k = 0; k < 20; k++){
+
                             if(booking + k - 1< 20 && cinema[j - 'A'][k]=='.' && cinema[j - 'A'][k + booking -1]=='.'){
                                 for(int z = k; z < booking + k; z++){
                                     cinema[j - 'A'][z] = 'X';
                                     al.add(Character.toString(j) + String.valueOf(z));
+                                    if((char)(j-1) >= 'A' && (char)(j-1) >= 'J') cinema[(char)(j-1) - 'A'][z] = '-';
+                                    if((char)(j+1) >= 'A' && (char)(j+1) <= 'J') cinema[(char)(j+1) - 'A'][z] = '-';
                                 }
                                 if(al.size()>0) break;
                             }
