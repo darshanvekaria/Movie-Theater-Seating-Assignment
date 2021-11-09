@@ -32,7 +32,8 @@ Sample output description:
 
 ### Critical assumptions and considerations
 
-- Each request wants to **get the tickets in a cluster**. For example, if the buyer wants 5 tickets, then he will only accept the tickets if they consecutive in a row. If two different rows have 3 and 2 tickets available, we assume that the buyer won't be interested in buying the tickets.
+- Each request wants to **get the tickets in a cluster**. For example, if the buyer wants 5 tickets, then he will only accept the tickets if they are consecutive in a row. If two different rows have 3 and 2 tickets available, we assume that the buyer won't be interested in buying the tickets.
+- Buffer rule of 3 seats and 1 row needs to be strictly followed.
 - Requests are processed in the **order in which they come**.
 - Time complexity for selections and updation of seats must be **optimal**
 
@@ -41,15 +42,15 @@ Sample output description:
 1. Take file input from command line and read the content of the file
 2. Create a seatCount Map which will represent the total number of seats filled up in each row.
 3. Create a reservations map that will keep the list of seats assigned to each request.
-4. PriorityQueue to fetch the row with maximum number of empty seats. The comparator works by comparing the occupancy of each row, which is listed in seatcount. Using PQ, we can** fetch the row with maximum empty seats in log(n) time**.
-5. Create a seatAvailable variable to map N number of empty seats are present in which rows. This is reverse mapping of what is stored by seatCount Map. **This Map is used so that we can get which row has exactly N empty seats in O(1) time.**
+4. Create a PriorityQueue to fetch the row with maximum number of empty seats. The comparator works by comparing the occupancy of each row, which is listed in seatcount. Using PriorityQueue, we can **fetch the row with maximum empty seats in log(n) time**.
+5. Create a seatAvailable variable to map N number of empty seats are present in which rows. This is **reverse mapping** of what is stored by seatCount Map. **This Map is used so that we can get which row has exactly N empty seats in O(1) time.**
 6. Start processing each request. Take out the row with maximum number of empty seats - O(log n)
 7. If we find that there is some row having exact number of empty seats as requested by the user, take that row - O(1)
 8. Take previous and next row of our current row (as we need to pad them to maintain social distancing)
 9. Fill the empty seats in selected row and add padding to previous and next row, for the seat numbers selected in the current row.
 10. Add 3 paddings to the current row, as we want to keep a buffer of 3 between people on same row.
 11. Update the total number of occupied/empty seats in the current row, previous and next row through the maps - O(1)
-12. If all the seats are showed as filled up, it might be the case that there is some empty seat in the middle of the row. Check for that and fill if match is found - O(n^2)
+12. If all the seats are showed as filled up, it might be the case that there is some empty seat in the middle of the rows. Check for that and fill if match is found - O(n^2)
 
 ## **Time Complexity:**
 
@@ -60,19 +61,19 @@ For finding seats for one request:
 
 ## Sample Input
 
-R1 4
-R2 6
-R3 12
-R4 16
-R5 10
-R6 11
-R7 90
-R8 3
-R9 5
-R10 4
-R11 3
-R12 1
-R13 1
+R1 4 <br />
+R2 6 <br />
+R3 12 <br />
+R4 16<br />
+R5 10<br />
+R6 11<br />
+R7 90<br />
+R8 3<br />
+R9 5<br />
+R10 4<br />
+R11 3<br />
+R12 1<br />
+R13 1<br />
 
 # Sample Output
 
